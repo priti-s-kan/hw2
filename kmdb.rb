@@ -88,10 +88,14 @@ Role.destroy_all
 # rails generate model Role
 
 # In the created migration files, I add columns to tables, and ran rails db:migrate
-# to update the tables with columns; I checked what was created in in schema.rb
+# to update the tables with columns; I checked what was created in schema.rb
 
 # Insert data into the database that reflects the sample data shown above.
 # Do not use hard-coded foreign key IDs.
+
+# I chose to create pre-searched groups to make it easier to input into data
+# versus writing ".find_by" into each Role data entry but both ways work
+
 new_studio = Studio.new
 new_studio["name"] = "Warner Bros."
 new_studio.save
@@ -285,8 +289,8 @@ for movie in Movie.all
   puts "#{title} #{yearreleased} #{rating} #{studio_name}"
 end
 
-# Google taught me how to space out rows by using ".ljust(character count)"" which is able to
-# make strings a minimum length, thus creating the illusion of a table
+# Google taught me how to space out rows by using ".ljust(character count)" which is
+# able to make strings a minimum length, thus creating the illusion of a table
 
 # Prints a header for the cast output
 puts ""
